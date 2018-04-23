@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Highcharts Example</title>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+
+<!--[if IE]>
+<script type="text/javascript" src="js/excanvas.compiled.js"></script>
+<![endif]-->
+
+<style type="text/css">
+
+</style>	
+
+
+</head>
+<body>
+<!-- initialize the chart on document -->
+<script type="text/javascript">
+$(document).ready(function() {	
+
+var options = {
+chart: {
+renderTo: 'container',
+type: 'pie'
+},
+
+plotOptions: {
+pie: {
+borderColor: '#000000',
+allowPointSelect: true,
+cursor: 'pointer',
+dataLabels: {
+enabled: true,
+color: '#ffffff',
+
+formatter: function() {
+return '<b>'+ this.point.name +'</b>: '+ this.y +' ';
+}	
+
+}
+}
+},
+title: {
+text: 'Pie Chart'
+},
+series: [{
+data:[]
+}]
+};
+
+
+//Load the data
+var fno = {{fileno}};
+       var fname = fno.toString();
+       var filename = '/static/file'+fname+'.csv';
+$.get(filename, function(data) {
+var lines = data.split('\n');
+
+// Iterate lines and add categories 
+$.each(lines, function(lineNo, line) {
+var items = line.split(',');
+
+
+if (lineNo > 0) {
+options.series[0].data.push([items[0],parseFloat(items[1])]);
+}
+});
+var chart = new Highcharts.Chart(options);
+});
+}); 
+
+</script>
+<div style="text-align: center;">
+<div id="container" style="width: 850px; height: 600px; margin: 0 auto;"></div>
+</div>
+
+</body>
+</html>

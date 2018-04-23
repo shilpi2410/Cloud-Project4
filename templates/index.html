@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: grey">
+    <h1 style="color: purple;text-align:center;">Shilpi Mittal</h1>
+    <h1 style="color: blue;text-align:center;">1001373752</h1>
+    <br>
+<form action="/createtable" method="post" enctype="multipart/form-data">
+        <h2 style="color: purple">Create the table</h2>
+        <input type="submit" value="Create"> 
+        <p>{{success}}</p>
+        <p>Time Taken :{{time_taken}}</p>
+    </form>
+<hr>
+<form action="/mymavlogin" method="post" enctype="multipart/form-data">
+  <h2 style="color: green;">Login Page</h2><br>
+<label>Username : </label><input type="text" name="usrname" placeholder="Enter Student username">
+<label>Password : </label> <input type="password" name="pswd" placeholder="Enter Password"> 
+ <input type="submit" value="Submit">
+ <p>{{error}}</p>
+ </form>
+<hr>
+
+<form action="/kmeans" method="post" enctype="multipart/form-data">
+    <h2 style="color: green;">Kmeans Clustering</h2><br>
+  <input type="text" name="col1" placeholder="Enter column1">
+ <input type="text" name="col2" placeholder="Enter Column2"> 
+ <input type="text" name="numberofclusters" placeholder="Enter no of clusters"> 
+ <input type="submit" value="Submit">
+      </form>
+<hr>
+
+
+
+<form action="/randomfunc" method="post" enctype="multipart/form-data">
+  <h2 style="color: green;">Random Function - Pie Chart</h2><br>
+<input type="submit" value="Submit">
+</form>
+
+<hr>
+<div style="float:left, width:20%;">
+ <form action="/inputbar" method="post" enctype="multipart/form-data">
+    <h2 style="color: green;">State Vote population -  Bar Chart</h2><br>
+  <input type="text" name="votpop1" placeholder="Enter vote1 population value">
+ <input type="text" name="votpop2" placeholder="Enter vote2 population value"> 
+ <input type="submit" value="Submit">
+ 
+     </form>
+   
+</div>
+<hr>
+<form action="/scatter" method="post" enctype="multipart/form-data">
+  <h2 style="color: green;">Scatter Plot</h2><br>
+<input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
